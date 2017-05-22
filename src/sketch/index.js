@@ -26,7 +26,12 @@ export default function createSketch(config) {
   } = config;
 
   return function sketch(s) {
-    let image, width, height, backgroundColor;
+    let
+      image,
+      width,
+      height,
+      backgroundColor;
+
     const sobelMap = [];
     const bubbles = [];
 
@@ -35,11 +40,15 @@ export default function createSketch(config) {
     }
 
     s.setup = () => {
+      // Set pixel density to 1, so that pixels from image are loaded in actual size
+      s.pixelDensity(1);
+
       width = image.width;
       height = image.height;
       s.createCanvas(width, height);
       s.image(image, 0, 0);
       s.loadPixels();
+      console.log(s.pixels.length);
 
       const backgroundMap = {
         black: s.color(0, 0, 0, 255),
@@ -59,6 +68,9 @@ export default function createSketch(config) {
           sobelMap[x + y * width] = s.map(sobelData[(x + y * width) * 4], 0, 255, VARIATION, 1 - VARIATION);
         }
       }
+
+      // Set pixel density back to displayDensity for retina rendering
+      s.pixelDensity(s.displayDensity());
 
       generateBubbles(SEED_COUNT);
     };
