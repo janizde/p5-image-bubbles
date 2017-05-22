@@ -2,16 +2,18 @@ import Sobel from 'sobel';
 
 import Bubble from './Bubble';
 
+export const defaultConfig = {
+  SEED_COUNT: 1000,
+  VARIATION: 5e-5,
+  BUBBLE_BUFFER: 2,
+  BUBBLE_OPACITY: 255,
+  IMAGE: 'illu.jpg',
+  BACKGROUND: 'white',
+  GROWTH_RATE: 0.05,
+};
+
 export function createDefaultSketch() {
-  return createSketch({
-    SEED_COUNT: 1000,
-    VARIATION: 5e-5,
-    BUBBLE_BUFFER: 2,
-    BUBBLE_OPACITY: 255,
-    IMAGE: 'illu.jpg',
-    BACKGROUND: 'white',
-    GROWTH_RATE: 0.05,
-  });
+  return createSketch(defaultConfig);
 }
 
 export default function createSketch(config) {
