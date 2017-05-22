@@ -14,17 +14,17 @@ export default class Bubble {
     }
   }
 
-  hits(other, buffer = 0) {
-    return this.pos.dist(other.pos) - buffer < this.r + other.r;
+  hits(other, maxDistance = 0) {
+    return this.pos.dist(other.pos) - maxDistance < this.r + other.r;
   }
 
-  hitsAny(others, buffer = 0) {
+  hitsAny(others, maxDistance = 0) {
     for (let i = 0; i < others.length; ++i) {
       if (others[i] === this) {
         continue;
       }
 
-      if (this.hits(others[i], buffer)) {
+      if (this.hits(others[i], maxDistance)) {
         return true;
       }
     }

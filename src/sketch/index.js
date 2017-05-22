@@ -4,8 +4,8 @@ import Bubble from './Bubble';
 
 export const defaultConfig = {
   SEED_COUNT: 1000,
-  VARIATION: 5e-5,
-  BUBBLE_BUFFER: 2,
+  PROBABILTY_THRESHOLD: 5e-5,
+  BUBBLE_DISTANCE: 2,
   BUBBLE_OPACITY: 255,
   IMAGE: 'illu.jpg',
   BACKGROUND: 'white',
@@ -19,8 +19,8 @@ export function createDefaultSketch() {
 export default function createSketch(config) {
   const {
     SEED_COUNT,
-    VARIATION,
-    BUBBLE_BUFFER,
+    PROBABILTY_THRESHOLD,
+    BUBBLE_DISTANCE,
     BUBBLE_OPACITY,
     IMAGE,
     BACKGROUND,
@@ -67,7 +67,7 @@ export default function createSketch(config) {
 
       for (let x = 0; x < width; ++x) {
         for (let y = 0; y < height; ++y) {
-          sobelMap[x + y * width] = s.map(sobelData[(x + y * width) * 4], 0, 255, VARIATION, 1 - VARIATION);
+          sobelMap[x + y * width] = s.map(sobelData[(x + y * width) * 4], 0, 255, PROBABILTY_THRESHOLD, 1 - PROBABILTY_THRESHOLD);
         }
       }
 
@@ -84,7 +84,7 @@ export default function createSketch(config) {
       bubbles.forEach((b) => {
         b.draw();
 
-        if (b.isGrowing && b.hitsAny(bubbles, BUBBLE_BUFFER)) {
+        if (b.isGrowing && b.hitsAny(bubbles, BUBBLE_DISTANCE)) {
           b.isGrowing = false;
         }
 
@@ -129,7 +129,7 @@ export default function createSketch(config) {
           b = new Bubble(s, s.createVector(x, y), null, GROWTH_RATE);
 
           for (let k = 0; k < bubbles.length; ++k) {
-            if (bubbles[k].hits(b, 5)) {
+            if (bubbles[k].hits(b, BUBBLE_DISTANCE)) {
               continue outer;
             }
           }

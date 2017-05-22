@@ -31,8 +31,8 @@ export default function createControls(onUpdate) {
 
   const settings = quicksettings.create();
   settings.bindRange("SEED_COUNT", 10, 10000, defaultConfig.SEED_COUNT, 1, config);
-  settings.bindRange("VARIATION", 5e-5, 0.05, defaultConfig.VARIATION, 1e-5, config);
-  settings.bindRange("BUBBLE_BUFFER", -50, 50, defaultConfig.BUBBLE_BUFFER, 1, config);
+  settings.bindRange("PROBABILTY_THRESHOLD", 5e-5, 0.05, defaultConfig.PROBABILTY_THRESHOLD, 1e-5, config);
+  settings.bindRange("BUBBLE_DISTANCE", -50, 50, defaultConfig.BUBBLE_DISTANCE, 1, config);
   settings.bindRange("BUBBLE_OPACITY", 0, 255, defaultConfig.BUBBLE_OPACITY, 1, config);
   settings.bindRange("GROWTH_RATE", 0.005, 5, defaultConfig.GROWTH_RATE, 0.01, config);
   settings.bindDropDown("IMAGE", images, config);
