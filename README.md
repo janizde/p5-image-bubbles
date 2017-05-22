@@ -4,7 +4,14 @@ This is a project based on p5.js and inspired by Daniel Shiffman's [Coding Chall
 
 > The sketch has been bootstrapped with the [generator-p5-webpack for Yeoman](http://bit.ly/2qPAhgF).
 
-## How it works
+## Contents
+
+* [How it works](#how-it-works)
+* [Parameters](#parameters)
+* [Running the project locally](#running-locally)
+* [License](#license)
+
+## <a name="how-it-works"></a>How it works
 
 The basic idea is to spawn bubbles randomly on a canvas and let them grow until they hit another bubble so they never overlap each other.
 
@@ -18,7 +25,7 @@ During initialization 1.000 bubbles are generated and 10 more are added in each 
 
 When clicking in a free spot, a new bubble is spawned regardless of the probability that pixel was assigned.
 
-## Parameters
+## <a name="parameters"></a>Parameters
 
 |Name|Description|
 |----|-----------|
@@ -30,7 +37,7 @@ When clicking in a free spot, a new bubble is spawned regardless of the probabil
 |`IMAGE`|An image preset|
 |`BACKGROUND`|The sketche's background color. Either white or black.|
 
-## Running the project locally
+## <a name="running-locally"></a>Running the project locally
 
 To run the project locally you have to perform the following steps:
 
@@ -38,3 +45,6 @@ To run the project locally you have to perform the following steps:
 2. `npm install`
 3. `npm start`
 
+## <a name="license"></a>License
+
+GPL-3.0 © [Jannik Portz](http://jannikportz.de)
