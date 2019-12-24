@@ -1,4 +1,4 @@
-# Image Bubbles
+# Image Bubbles 🖼 🧼 [![Build Status](https://travis-ci.com/janizde/p5-image-bubbles.svg?branch=master)](https://travis-ci.com/janizde/p5-image-bubbles)
 
 This is a project based on p5.js and inspired by Daniel Shiffman's [Coding Challenge on Circle Packing](http://bit.ly/2qPyMiJ) dealing with circle packing based on image edge detection with the help of the [Sobel operator](http://bit.ly/2qalITV).
 
