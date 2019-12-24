@@ -50,7 +50,6 @@ export default function createSketch(config) {
       s.createCanvas(width, height);
       s.image(image, 0, 0);
       s.loadPixels();
-      console.log(s.pixels.length);
 
       const backgroundMap = {
         black: s.color(0, 0, 0, 255),
