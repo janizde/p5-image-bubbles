@@ -2,6 +2,8 @@
 
 This is a project based on p5.js and inspired by Daniel Shiffman's [Coding Challenge on Circle Packing](http://bit.ly/2qPyMiJ) dealing with circle packing based on image edge detection with the help of the [Sobel operator](http://bit.ly/2qalITV).
 
+[🤖 Demo 🎨](https://janizde.github.io/p5-image-bubbles/)
+
 > The sketch has been bootstrapped with the [generator-p5-webpack for Yeoman](http://bit.ly/2qPAhgF).
 
 ## Contents
