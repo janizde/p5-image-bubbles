@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -24,10 +23,11 @@ module.exports = {
     ]
   },
   module: {
-    loaders: [
+    rules: [
       {
         loader: 'babel-loader',
-        test: /\.js$/
+        test: /\.js$/,
+        exclude: /node_modules/g,
       }
     ],
   },
@@ -42,15 +42,6 @@ module.exports = {
         to: path.resolve(__dirname, 'dist', 'assets'),
       }
     ]),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      minChunks: function (module) {
-        return module.context && module.context.indexOf('node_modules') !== -1;
-      },
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'manifest'
-    }),
   ],
   devtool: 'source-map'
 };
