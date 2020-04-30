@@ -9,7 +9,7 @@
   },
   "browserslist": "defaults",
   "dependencies": {
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "p5": "^0.10.2",
     "quicksettings": "^3.0.1",
     "sobel": "^0.0.11"
